@@ -1,0 +1,1081 @@
+<!DOCTYPE html>
+<html lang="en" data-theme="dark">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="description"
+    content="KGL Sneaker Gallery - Kigali's premier authentic sneaker destination. Shop Nike Air Max TN, Air Jordan, Yeezy, New Balance and more with same-day Kigali delivery and MTN MoMo payment.">
+  <meta name="keywords"
+    content="shoes, sneakers, Kigali shoes, KGL sneaker gallery, airmax tn, Jordan, Nike Rwanda, buy shoes kigali">
+  <title>KGL SNEAKER GALLERY | Authentic Kicks & Streetwear Kigali</title>
+
+  <!-- Favicon -->
+  <link rel="icon" type="image/jpeg" href="assets/brand_banner.jpg">
+
+  <!-- Bootstrap 5.3.3 CSS -->
+  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet"
+    integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+
+  <!-- Bootstrap Icons -->
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.11.3/font/bootstrap-icons.min.css">
+
+  <!-- Custom CSS -->
+  <link rel="stylesheet" href="css/style.css">
+</head>
+
+<body>
+
+  <!-- Top Announcement Bar -->
+  <div class="announcement-bar">
+    <div class="container d-flex justify-content-between align-items-center flex-wrap gap-2">
+      <div class="d-flex align-items-center gap-3">
+        <span><i class="bi bi-truck text-danger me-1"></i> <strong>FREE Same-Day Delivery</strong> in Kigali</span>
+        <span class="d-none d-md-inline text-dim">&bull;</span>
+        <span class="d-none d-md-inline"><i class="bi bi-shield-check text-success me-1"></i> 100% Authentic
+          Guaranteed</span>
+      </div>
+
+      <div class="d-flex align-items-center gap-3">
+        <a href="https://wa.me/250790329458" target="_blank"
+          class="d-flex align-items-center gap-1 text-success fw-bold">
+          <i class="bi bi-whatsapp"></i> +250 790 329 458
+        </a>
+        <div class="vr bg-secondary opacity-50 d-none d-sm-block"></div>
+        <!-- Currency Selector -->
+        <div class="btn-group btn-group-sm" role="group" aria-label="Currency Toggle">
+          <button type="button" class="currency-selector currency-toggle-btn active" data-currency="RWF"
+            onclick="switchCurrency('RWF')">RWF</button>
+          <button type="button" class="currency-selector currency-toggle-btn" data-currency="USD"
+            onclick="switchCurrency('USD')">USD ($)</button>
+        </div>
+        <!-- Theme Toggle -->
+        <button class="theme-btn" onclick="toggleTheme()" title="Toggle Dark/Light Mode">
+          <i class="bi bi-sun-fill" id="theme-toggle-icon"></i>
+        </button>
+      </div>
+    </div>
+  </div>
+
+  <!-- Main Navigation Header -->
+  <header class="main-navbar">
+    <nav class="navbar navbar-expand-lg py-2">
+      <div class="container">
+        <!-- Logo -->
+        <a class="navbar-brand" href="#home">
+          <img src="assets/brand_banner.jpg" alt="KGL Sneaker Gallery Logo" class="brand-logo-img"
+            onerror="this.src='airmaxtn.jpg';">
+          <div>
+            <div class="brand-text-title">KGL SNEAKER</div>
+            <div class="brand-text-sub">Gallery &bull; Kigali</div>
+          </div>
+        </a>
+
+        <!-- Mobile Toggles Container -->
+        <div class="d-flex align-items-center gap-2 d-lg-none">
+          <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#wishlistModal" title="Wishlist">
+            <i class="bi bi-heart"></i>
+            <span class="action-badge d-none" id="mobile-wishlist-badge">0</span>
+          </button>
+          <button class="nav-action-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
+            title="Shopping Cart">
+            <i class="bi bi-bag"></i>
+            <span class="action-badge" id="mobile-cart-badge">0</span>
+          </button>
+          <button class="navbar-toggler border-0 text-white" type="button" data-bs-toggle="collapse"
+            data-bs-target="#navbarContent" aria-controls="navbarContent" aria-expanded="false"
+            aria-label="Toggle navigation">
+            <i class="bi bi-list fs-2"></i>
+          </button>
+        </div>
+
+        <!-- Navigation Links -->
+        <div class="collapse navbar-collapse" id="navbarContent">
+          <ul class="navbar-nav mx-auto mb-2 mb-lg-0">
+            <li class="nav-item"><a class="nav-link active" href="#home">Home</a></li>
+            <li class="nav-item"><a class="nav-link" href="#catalog">Vault Drops</a></li>
+            <li class="nav-item"><a class="nav-link" href="#spotlight">Deal of the Day</a></li>
+            <li class="nav-item"><a class="nav-link" href="#customizer">Customizer</a></li>
+            <li class="nav-item"><a class="nav-link" href="#size-guide" data-bs-toggle="modal"
+                data-bs-target="#sizeGuideModal">Size Guide</a></li>
+            <li class="nav-item"><a class="nav-link" href="#reviews">Reviews</a></li>
+            <li class="nav-item"><a class="nav-link" href="#contact">Contact</a></li>
+          </ul>
+
+          <!-- Desktop Actions -->
+          <div class="d-none d-lg-flex align-items-center gap-3">
+            <a href="#catalog" class="nav-action-btn" title="Search Kicks"
+              onclick="document.getElementById('search-input').focus();">
+              <i class="bi bi-search"></i>
+            </a>
+            <button class="nav-action-btn" data-bs-toggle="modal" data-bs-target="#wishlistModal"
+              title="Saved Wishlist">
+              <i class="bi bi-heart"></i>
+              <span class="action-badge d-none" id="wishlist-badge-count">0</span>
+            </button>
+            <button class="nav-action-btn" id="nav-cart-btn" data-bs-toggle="offcanvas" data-bs-target="#cartOffcanvas"
+              title="Shopping Cart">
+              <i class="bi bi-bag"></i>
+              <span class="action-badge d-none" id="cart-badge-count">0</span>
+            </button>
+            <a href="https://wa.me/250790329458" target="_blank"
+              class="btn btn-outline-success btn-sm rounded-pill px-3 fw-bold d-flex align-items-center gap-1">
+              <i class="bi bi-whatsapp"></i> Chat Direct
+            </a>
+          </div>
+        </div>
+      </div>
+    </nav>
+  </header>
+
+  <!-- HERO SECTION -->
+  <section class="hero-section" id="home">
+    <div class="container">
+      <div class="row align-items-center g-5">
+        <!-- Hero Text -->
+        <div class="col-lg-6">
+          <div class="hero-tagline">
+            <i class="bi bi-fire"></i> Official Kigali Sneaker Boutique
+          </div>
+          <h1 class="hero-title">
+            Step Into The <br>
+            <span class="text-gradient">Extraordinary</span>
+          </h1>
+          <p class="hero-desc">
+            Discover verified authentic sneakers from Nike, Jordan, New Balance and Adidas. Hand-picked drops delivered
+            straight to your door across Kigali with instant MTN MoMo payment.
+          </p>
+
+          <div class="d-flex flex-wrap align-items-center gap-3 mb-4">
+            <a href="#catalog"
+              class="btn btn-danger btn-lg rounded-pill px-4 py-3 fw-bold text-uppercase d-flex align-items-center gap-2 shadow-lg">
+              <i class="bi bi-lightning-charge-fill"></i> Shop All Drops
+            </a>
+            <a href="https://wa.me/250790329458?text=Hello%20KGL%20Sneaker%20Gallery!%20I%20want%20to%20inquire%20about%20available%20shoes."
+              target="_blank"
+              class="btn btn-outline-light btn-lg rounded-pill px-4 py-3 fw-bold d-flex align-items-center gap-2">
+              <i class="bi bi-whatsapp text-success"></i> WhatsApp Order
+            </a>
+          </div>
+
+          <!-- Quick Stats Row -->
+          <div class="row g-3 pt-3 border-top border-secondary border-opacity-25">
+            <div class="col-4">
+              <div class="font-display fs-2 text-white">100%</div>
+              <div class="text-dim small fw-semibold">Authentic Kicks</div>
+            </div>
+            <div class="col-4">
+              <div class="font-display fs-2 text-danger">36-46</div>
+              <div class="text-dim small fw-semibold">Sizes In Stock</div>
+            </div>
+            <div class="col-4">
+              <div class="font-display fs-2 text-success">&lt; 2 HRS</div>
+              <div class="text-dim small fw-semibold">Kigali Delivery</div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Hero Showcase Stage -->
+        <div class="col-lg-6">
+          <div class="hero-showcase-wrap">
+            <!-- Floating Badge 1 -->
+            <div class="floating-badge badge-1">
+              <div class="rounded-circle bg-danger bg-opacity-25 p-2 text-danger">
+                <i class="bi bi-patch-check-fill fs-4"></i>
+              </div>
+              <div>
+                <div class="fw-bold text-white small">Verified Authentic</div>
+                <div class="text-dim" style="font-size:0.75rem;">Inspected in Kigali</div>
+              </div>
+            </div>
+
+            <!-- Featured Showcase Card -->
+            <div class="hero-shoe-stage" id="hero-stage">
+              <div class="d-flex justify-content-between align-items-center mb-2">
+                <span class="badge bg-danger text-uppercase px-3 py-2 rounded-pill fw-bold">KGL Flagship Drop</span>
+                <span class="text-volt fw-bold small"><i class="bi bi-dot"></i> In Stock</span>
+              </div>
+              <img src="assets/shoe_airmax_tn.jpg" alt="Nike Air Max TN Plus" class="hero-shoe-img" id="hero-shoe-image"
+                onerror="this.src='airmaxtn.jpg';">
+
+              <div class="mt-4 pt-3 border-top border-secondary border-opacity-25">
+                <div class="d-flex justify-content-between align-items-baseline mb-2">
+                  <div>
+                    <h3 class="h4 text-white fw-bold mb-0">Nike Air Max TN Plus</h3>
+                    <div class="text-dim small">Triple Black &bull; Sizes 36 to 46</div>
+                  </div>
+                  <div class="text-end">
+                    <div class="font-display fs-2 text-gradient">33,000 RWF</div>
+                    <div class="text-dim small text-decoration-line-through">42,000 RWF</div>
+                  </div>
+                </div>
+
+                <div class="d-flex gap-2 mt-3">
+                  <button class="btn btn-danger w-100 fw-bold rounded-pill" onclick="addToCart(PRODUCTS[0], 42, 1)">
+                    <i class="bi bi-bag-plus me-1"></i> Quick Add to Bag
+                  </button>
+                  <button class="btn btn-outline-light rounded-pill px-3" onclick="openQuickView('kgl-01')"
+                    title="View Details">
+                    <i class="bi bi-eye"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+
+            <!-- Floating Badge 2 -->
+            <div class="floating-badge badge-2">
+              <div class="rounded-circle bg-success bg-opacity-25 p-2 text-success">
+                <i class="bi bi-phone-fill fs-4"></i>
+              </div>
+              <div>
+                <div class="fw-bold text-white small">MoMo & Airtel Money</div>
+                <div class="text-dim" style="font-size:0.75rem;">Instant Checkout</div>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- BRAND STRIP -->
+  <section class="brand-strip">
+    <div class="container">
+      <div class="d-flex justify-content-between align-items-center flex-wrap gap-4 text-center">
+        <div class="brand-pill active" data-brand="all"><i class="bi bi-grid-fill me-1"></i> ALL BRANDS</div>
+        <div class="brand-pill" data-brand="Nike"><i class="bi bi-check2"></i> NIKE</div>
+        <div class="brand-pill" data-brand="Jordan"><i class="bi bi-trophy-fill"></i> JORDAN</div>
+        <div class="brand-pill" data-brand="Adidas"><i class="bi bi-slash-lg"></i> ADIDAS</div>
+        <div class="brand-pill" data-brand="New Balance"><i class="bi bi-record-circle"></i> NEW BALANCE</div>
+      </div>
+    </div>
+  </section>
+
+  <!-- VALUE PROPOSITIONS -->
+  <section class="features-section">
+    <div class="container">
+      <div class="row g-4">
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrap"><i class="bi bi-shield-shaded"></i></div>
+            <h5 class="fw-bold mb-2">100% Authentic</h5>
+            <p class="text-muted small mb-0">Every pair undergoes rigorous stitching, box, and material verification
+              before delivery.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrap" style="color:var(--accent-volt); background:rgba(184, 255, 0, 0.1);"><i
+                class="bi bi-lightning-fill"></i></div>
+            <h5 class="fw-bold mb-2">Express Kigali Delivery</h5>
+            <p class="text-muted small mb-0">Within 2 to 3 hours anywhere in Nyarugenge, Gasabo, and Kicukiro districts.
+            </p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrap" style="color:#25d366; background:rgba(37, 211, 102, 0.1);"><i
+                class="bi bi-whatsapp"></i></div>
+            <h5 class="fw-bold mb-2">WhatsApp Direct Order</h5>
+            <p class="text-muted small mb-0">Chat directly with our Kigali team on WhatsApp for real pictures and fast
+              checkout.</p>
+          </div>
+        </div>
+        <div class="col-12 col-md-6 col-lg-3">
+          <div class="feature-box">
+            <div class="feature-icon-wrap" style="color:var(--accent-cyan); background:rgba(0, 229, 255, 0.1);"><i
+                class="bi bi-arrow-repeat"></i></div>
+            <h5 class="fw-bold mb-2">Easy Size Exchange</h5>
+            <p class="text-muted small mb-0">Didn't fit right? Swap your size (36 to 46) hassle-free within 48 hours in
+              Kigali.</p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- PRODUCT VAULT / CATALOG SECTION -->
+  <section class="py-5" id="catalog">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-danger fw-bold text-uppercase letter-spacing small">Verified Drops</span>
+        <h2 class="display-4 font-display text-white">The Sneaker Vault</h2>
+        <p class="text-muted max-w-600 mx-auto">Explore high-heat silhouettes, track-tested runners, and timeless court
+          classics.</p>
+      </div>
+
+      <!-- Filter & Search Toolbar -->
+      <div class="filter-toolbar">
+        <div class="row g-3 align-items-center">
+          <!-- Category Tabs -->
+          <div class="col-12 col-xl-7">
+            <div class="d-flex flex-wrap gap-2">
+              <button class="category-tab-btn active" data-category="all">All Drops</button>
+              <button class="category-tab-btn" data-category="streetwear">Streetwear & TN</button>
+              <button class="category-tab-btn" data-category="basketball">Basketball & High</button>
+              <button class="category-tab-btn" data-category="running">Performance Running</button>
+              <button class="category-tab-btn" data-category="luxury">Luxury & Chunky</button>
+              <button class="category-tab-btn" data-category="lifestyle">Lifestyle & Dunks</button>
+            </div>
+          </div>
+
+          <!-- Search Input -->
+          <div class="col-12 col-md-7 col-xl-3">
+            <div class="search-input-group">
+              <i class="bi bi-search"></i>
+              <input type="text" class="form-control" id="search-input" placeholder="Search Air Max, Jordan, sizes...">
+            </div>
+          </div>
+
+          <!-- Sort Dropdown -->
+          <div class="col-12 col-md-5 col-xl-2">
+            <select class="form-select bg-dark text-white border-secondary rounded-pill" id="sort-select">
+              <option value="featured">Sort: Featured</option>
+              <option value="price-low">Price: Low to High</option>
+              <option value="price-high">Price: High to Low</option>
+              <option value="rating">Highest Rated</option>
+            </select>
+          </div>
+        </div>
+
+        <div
+          class="d-flex justify-content-between align-items-center mt-3 pt-3 border-top border-secondary border-opacity-25 small text-muted">
+          <span id="products-count">Showing 8 exclusive kicks</span>
+          <button class="btn btn-sm btn-link text-danger text-decoration-none p-0" onclick="resetFilters()">
+            <i class="bi bi-arrow-counterclockwise"></i> Reset Filters
+          </button>
+        </div>
+      </div>
+
+      <!-- Products Grid -->
+      <div class="row g-4" id="products-grid">
+        <!-- Rendered dynamically by app.js -->
+      </div>
+    </div>
+  </section>
+
+  <!-- DEAL OF THE DAY / SPOTLIGHT -->
+  <section class="container" id="spotlight">
+    <div class="deal-banner">
+      <div class="row align-items-center g-4">
+        <div class="col-lg-7">
+          <span class="badge bg-danger rounded-pill px-3 py-2 text-uppercase fw-bold mb-2">Deal of the Day</span>
+          <h2 class="display-5 font-display text-white">Air Jordan Retro High 'Mamba Bred'</h2>
+          <p class="text-muted">
+            Legendary court performance dressed in premium tumbled red leather and speckled court midsoles. Get 20% off
+            plus free same-day express delivery in Kigali before the countdown ends.
+          </p>
+
+          <!-- Countdown Timer -->
+          <div class="countdown-box">
+            <div class="countdown-unit">
+              <div class="countdown-val" id="deal-hours">09</div>
+              <div class="countdown-label">Hours</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-val" id="deal-minutes">44</div>
+              <div class="countdown-label">Mins</div>
+            </div>
+            <div class="countdown-unit">
+              <div class="countdown-val" id="deal-seconds">20</div>
+              <div class="countdown-label">Secs</div>
+            </div>
+          </div>
+
+          <!-- Stock Progress Bar -->
+          <div class="mb-4" style="max-width: 380px;">
+            <div class="d-flex justify-content-between small text-muted mb-1">
+              <span>Hurry, only <strong>4 pairs</strong> left in stock!</span>
+              <span class="text-danger fw-bold">85% Claimed</span>
+            </div>
+            <div class="progress bg-dark" style="height: 8px;">
+              <div class="progress-bar bg-danger" role="progressbar" style="width: 85%" aria-valuenow="85"
+                aria-valuemin="0" aria-valuemax="100"></div>
+            </div>
+          </div>
+
+          <div class="d-flex flex-wrap gap-3">
+            <button class="btn btn-danger btn-lg rounded-pill px-4 fw-bold" onclick="addToCart(PRODUCTS[1], 42, 1)">
+              <i class="bi bi-bag-plus-fill me-2"></i> Claim This Deal
+            </button>
+            <a href="https://wa.me/250790329458?text=Hello%20KGL%20Sneaker%20Gallery!%20I%20want%20to%20claim%20the%20Air%20Jordan%20Retro%20High%20Deal%20of%20the%20Day."
+              target="_blank" class="btn btn-outline-success btn-lg rounded-pill px-4 fw-bold">
+              <i class="bi bi-whatsapp me-2"></i> WhatsApp Fast Order
+            </a>
+          </div>
+        </div>
+
+        <div class="col-lg-5 text-center">
+          <img src="assets/shoe_jordan_retro.jpg" alt="Air Jordan Retro" class="img-fluid rounded-4 shadow-lg"
+            style="max-height: 380px; object-fit: contain;">
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- INTERACTIVE SHOE CUSTOMIZER / COLORWAY PREVIEW -->
+  <section class="py-5" id="customizer">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-danger fw-bold text-uppercase small">Interactive Studio</span>
+        <h2 class="display-4 font-display text-white">Live Colorway & Fit Customizer</h2>
+        <p class="text-muted">Preview dynamic lighting, inspect shoe silhouettes, and check international size
+          standards.</p>
+      </div>
+
+      <div class="row g-4 align-items-center">
+        <!-- Preview Stage -->
+        <div class="col-lg-7">
+          <div class="customizer-box text-center" id="customizer-shoe-stage"
+            style="box-shadow: 0 15px 40px rgba(255, 75, 62, 0.35);">
+            <div class="d-flex justify-content-between align-items-center mb-3">
+              <span class="badge bg-secondary rounded-pill">Model: Nike Air Max TN</span>
+              <span class="small text-muted">Aura: <strong class="text-white" id="customizer-color-label">Crimson
+                  Heat</strong></span>
+            </div>
+
+            <img src="assets/shoe_airmax_tn.jpg" alt="Customizer Shoe" class="img-fluid py-4"
+              style="max-height: 320px; object-fit: contain; filter: drop-shadow(0 15px 25px rgba(0,0,0,0.6));">
+
+            <div class="d-flex justify-content-center align-items-center gap-3 mt-3">
+              <div class="color-dot active" style="background:#ff4b3e;"
+                onclick="setCustomizerColor('Crimson Heat', 'rgba(255, 75, 62, 0.45)');" title="Crimson Heat"></div>
+              <div class="color-dot" style="background:#00e5ff;"
+                onclick="setCustomizerColor('Electric Cyan', 'rgba(0, 229, 255, 0.45)');" title="Electric Cyan"></div>
+              <div class="color-dot" style="background:#b8ff00;"
+                onclick="setCustomizerColor('Volt Lime', 'rgba(184, 255, 0, 0.45)');" title="Volt Lime"></div>
+              <div class="color-dot" style="background:#8b5cf6;"
+                onclick="setCustomizerColor('Royal Purple', 'rgba(139, 92, 246, 0.45)');" title="Royal Purple"></div>
+              <div class="color-dot" style="background:#111111; border-color:#555;"
+                onclick="setCustomizerColor('Stealth Shadow', 'rgba(255, 255, 255, 0.2)');" title="Stealth Shadow">
+              </div>
+            </div>
+          </div>
+        </div>
+
+        <!-- Customizer Details -->
+        <div class="col-lg-5">
+          <div class="glass-card p-4">
+            <h3 class="h4 fw-bold text-white mb-3">Finding Your Perfect Pair</h3>
+            <p class="text-muted small">
+              All sneakers at KGL Sneaker Gallery are stocked in European sizing from <strong>EU 36 up to EU
+                46</strong>. If you are between sizes, we recommend sizing up a half size for maximum comfort.
+            </p>
+
+            <div class="p-3 bg-dark rounded-3 border border-secondary mb-3">
+              <div class="d-flex justify-content-between small text-muted mb-2">
+                <span>Standard Fits:</span>
+                <span class="text-success fw-bold">True to Size (TTS)</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted mb-2">
+                <span>Arch Cushion:</span>
+                <span class="text-white">Tuned Air Pods</span>
+              </div>
+              <div class="d-flex justify-content-between small text-muted">
+                <span>Try-on Policy:</span>
+                <span class="text-white">Courier waits while you try on!</span>
+              </div>
+            </div>
+
+            <div class="d-grid gap-2">
+              <button class="btn btn-outline-light rounded-pill fw-bold" data-bs-toggle="modal"
+                data-bs-target="#sizeGuideModal">
+                <i class="bi bi-rulers me-2"></i> View Complete Size Conversion Chart
+              </button>
+              <a href="https://wa.me/250790329458?text=Hello%20KGL%20Sneaker%20Gallery!%20I%20need%20help%20choosing%20the%20right%20shoe%20size."
+                target="_blank" class="btn btn-outline-success rounded-pill fw-bold">
+                <i class="bi bi-whatsapp me-2"></i> Ask Sizing Specialist on WhatsApp
+              </a>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- CUSTOMER REVIEWS -->
+  <section class="py-5 bg-dark bg-opacity-50" id="reviews">
+    <div class="container">
+      <div class="text-center mb-5">
+        <span class="text-danger fw-bold text-uppercase small">Community Verified</span>
+        <h2 class="display-4 font-display text-white">What Kigali Sneakerheads Say</h2>
+        <p class="text-muted">Real reviews from sneaker lovers across Kigali.</p>
+      </div>
+
+      <div class="row g-4">
+        <div class="col-12 col-md-4">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div
+                class="review-avatar d-flex align-items-center justify-content-center bg-danger text-white fw-bold fs-5">
+                EK</div>
+              <div>
+                <h6 class="mb-0 text-white fw-bold">Eric K.</h6>
+                <div class="text-dim small">Kacyiru, Kigali &bull; Verified Buyer</div>
+              </div>
+            </div>
+            <div class="text-warning mb-2">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-0">
+              "Ordered the Nike Air Max TN Triple Black on WhatsApp at 11 AM, and it was delivered to my office in
+              Kacyiru before 1 PM! The shoe quality is 100% legit, exactly as pictured."
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div
+                class="review-avatar d-flex align-items-center justify-content-center bg-primary text-white fw-bold fs-5">
+                SM</div>
+              <div>
+                <h6 class="mb-0 text-white fw-bold">Sarah M.</h6>
+                <div class="text-dim small">Kimironko, Kigali &bull; Verified Buyer</div>
+              </div>
+            </div>
+            <div class="text-warning mb-2">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-0">
+              "The Dunk Low UNC fit perfectly. I was skeptical about shoe shopping online in Rwanda, but paying through
+              MTN MoMo on delivery gave me total peace of mind. Highly recommend KGL Sneaker Gallery!"
+            </p>
+          </div>
+        </div>
+
+        <div class="col-12 col-md-4">
+          <div class="review-card">
+            <div class="d-flex align-items-center gap-3 mb-3">
+              <div
+                class="review-avatar d-flex align-items-center justify-content-center bg-success text-white fw-bold fs-5">
+                JN</div>
+              <div>
+                <h6 class="mb-0 text-white fw-bold">Jean-Paul N.</h6>
+                <div class="text-dim small">Nyarugenge &bull; Verified Buyer</div>
+              </div>
+            </div>
+            <div class="text-warning mb-2">
+              <i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i><i
+                class="bi bi-star-fill"></i><i class="bi bi-star-fill"></i>
+            </div>
+            <p class="text-muted small mb-0">
+              "Best sneaker store in Kigali. The Air Jordan Retro High build is premium, comfortable cushioning, and the
+              customer support answered my WhatsApp messages in under 2 minutes."
+            </p>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- NEWSLETTER / DISCOUNT BANNER -->
+  <section class="py-5">
+    <div class="container">
+      <div class="glass-card p-5 text-center position-relative overflow-hidden">
+        <div class="position-relative z-2 max-w-600 mx-auto">
+          <span class="badge bg-danger rounded-pill px-3 py-2 text-uppercase fw-bold mb-2">VIP Sneakerhead Club</span>
+          <h2 class="display-5 font-display text-white">Get 10% Off Your First Pair</h2>
+          <p class="text-muted mb-4">Subscribe to secret shock drops, restock alerts, and exclusive discounts in Kigali.
+          </p>
+
+          <form id="newsletter-form" class="row g-2 justify-content-center">
+            <div class="col-12 col-sm-8">
+              <input type="email"
+                class="form-control form-control-lg bg-dark text-white border-secondary rounded-pill px-4"
+                id="newsletter-email" placeholder="Enter your email address..." required>
+            </div>
+            <div class="col-12 col-sm-4">
+              <button type="submit" class="btn btn-danger btn-lg rounded-pill w-100 fw-bold">
+                Unlock 10%
+              </button>
+            </div>
+          </form>
+          <div class="small text-muted mt-2">Use code <span class="text-danger fw-bold">KGL10</span> at checkout for
+            instant savings.</div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- FOOTER -->
+  <footer class="site-footer" id="contact">
+    <div class="container">
+      <div class="row g-4 mb-5">
+        <!-- Brand Info -->
+        <div class="col-12 col-lg-4">
+          <div class="d-flex align-items-center gap-2 mb-3">
+            <img src="assets/brand_banner.jpg" alt="Logo" class="brand-logo-img">
+            <div>
+              <div class="brand-text-title">KGL SNEAKER</div>
+              <div class="brand-text-sub">GALLERY &bull; RWANDA</div>
+            </div>
+          </div>
+          <p class="text-muted small">
+            Kigali's premier authentic footwear retailer. We source original hype sneakers, performance runners, and
+            timeless lifestyle silhouettes for street style enthusiasts across East Africa.
+          </p>
+          <div class="d-flex gap-3 mt-3">
+            <a href="https://wa.me/250790329458" target="_blank" class="nav-action-btn"><i
+                class="bi bi-whatsapp"></i></a>
+            <a href="#" class="nav-action-btn"><i class="bi bi-instagram"></i></a>
+            <a href="#" class="nav-action-btn"><i class="bi bi-tiktok"></i></a>
+            <a href="#" class="nav-action-btn"><i class="bi bi-facebook"></i></a>
+          </div>
+        </div>
+
+        <!-- Quick Links -->
+        <div class="col-6 col-lg-2">
+          <h6 class="text-white fw-bold mb-3">Quick Links</h6>
+          <ul class="list-unstyled">
+            <li><a href="#catalog" class="footer-link">New Drops</a></li>
+            <li><a href="#catalog" class="footer-link">Air Max TN</a></li>
+            <li><a href="#catalog" class="footer-link">Air Jordan</a></li>
+            <li><a href="#catalog" class="footer-link">Running Kicks</a></li>
+            <li><a href="#spotlight" class="footer-link">Flash Deals</a></li>
+          </ul>
+        </div>
+
+        <!-- Customer Care -->
+        <div class="col-6 col-lg-3">
+          <h6 class="text-white fw-bold mb-3">Customer Support</h6>
+          <ul class="list-unstyled">
+            <li><a href="#" data-bs-toggle="modal" data-bs-target="#sizeGuideModal" class="footer-link">Shoe Size
+                Chart</a></li>
+            <li><a href="https://wa.me/250790329458" target="_blank" class="footer-link">Track My Order</a></li>
+            <li><a href="https://wa.me/250790329458" target="_blank" class="footer-link">Size Exchange Policy</a></li>
+            <li><a href="https://wa.me/250790329458" target="_blank" class="footer-link">Authenticity Promise</a></li>
+            <li><a href="https://wa.me/250790329458" target="_blank" class="footer-link">Kigali Delivery Info</a></li>
+          </ul>
+        </div>
+
+        <!-- Contact Kigali -->
+        <div class="col-12 col-lg-3">
+          <h6 class="text-white fw-bold mb-3">Kigali Boutique Contact</h6>
+          <ul class="list-unstyled text-muted small">
+            <li class="mb-2"><i class="bi bi-geo-alt-fill text-danger me-2"></i> Downtown / Kiyovu &bull; Kigali, Rwanda
+            </li>
+            <li class="mb-2"><i class="bi bi-whatsapp text-success me-2"></i> <a href="https://wa.me/250790329458"
+                target="_blank" class="text-success fw-bold text-decoration-none">+250 790 329 458</a></li>
+            <li class="mb-2"><i class="bi bi-clock-fill text-warning me-2"></i> Mon - Sun: 8:00 AM - 10:00 PM</li>
+            <li class="mb-2"><i class="bi bi-credit-card-fill text-info me-2"></i> MTN MoMo &bull; Airtel &bull; Cash on
+              Delivery</li>
+          </ul>
+        </div>
+      </div>
+
+      <div
+        class="d-flex justify-content-between align-items-center flex-wrap pt-4 border-top border-secondary border-opacity-25 small text-muted">
+        <div>&copy; 2026 KGL Sneaker Gallery. Built with HTML, CSS, Bootstrap 5 & JS. All Rights Reserved.</div>
+        <div class="d-flex gap-3 align-items-center mt-2 mt-md-0">
+          <span>Payment Accepted:</span>
+          <span class="badge bg-warning text-dark fw-bold">MTN MoMo</span>
+          <span class="badge bg-danger text-white fw-bold">Airtel Money</span>
+          <span class="badge bg-primary text-white fw-bold">Visa / MC</span>
+        </div>
+      </div>
+    </div>
+  </footer>
+
+  <!-- =========================================================================
+       MODALS & OFFCANVAS DRAWERS
+       ========================================================================= -->
+
+  <!-- SHOPPING CART OFFCANVAS -->
+  <div class="offcanvas offcanvas-end" tabindex="-1" id="cartOffcanvas" aria-labelledby="cartOffcanvasLabel">
+    <div class="offcanvas-header border-bottom border-secondary border-opacity-25">
+      <div class="d-flex align-items-center gap-2">
+        <i class="bi bi-bag-check-fill text-danger fs-4"></i>
+        <h5 class="offcanvas-title fw-bold text-white" id="cartOffcanvasLabel">Your Sneaker Bag</h5>
+      </div>
+      <button type="button" class="btn-close btn-close-white" data-bs-dismiss="offcanvas" aria-label="Close"></button>
+    </div>
+
+    <div class="offcanvas-body d-flex flex-column">
+      <!-- Items Container -->
+      <div class="flex-grow-1 overflow-y-auto pe-1" id="cart-items-container">
+        <!-- Rendered by app.js -->
+      </div>
+
+      <!-- Cart Summary Footer -->
+      <div id="cart-summary-wrapper" class="pt-3 border-top border-secondary border-opacity-25">
+        <!-- Promo Input -->
+        <div class="input-group mb-3">
+          <input type="text" class="form-control bg-dark text-white border-secondary" id="cart-promo-input"
+            placeholder="Promo code (e.g. KGL10)">
+          <button class="btn btn-outline-danger" type="button" onclick="applyPromoCode()">Apply</button>
+        </div>
+
+        <div class="cart-summary-box">
+          <div class="cart-summary-line">
+            <span>Subtotal:</span>
+            <span id="cart-subtotal" class="fw-bold text-white">0 RWF</span>
+          </div>
+          <div class="cart-summary-line d-none text-success" id="cart-discount-line">
+            <span>Discount (10%):</span>
+            <span id="cart-discount-val">-0 RWF</span>
+          </div>
+          <div class="cart-summary-line">
+            <span>Kigali Express Delivery:</span>
+            <span class="text-success fw-bold">FREE</span>
+          </div>
+          <div class="cart-summary-total d-flex justify-content-between">
+            <span>Estimated Total:</span>
+            <span id="cart-total" class="text-gradient">0 RWF</span>
+          </div>
+        </div>
+
+        <div class="d-grid gap-2 mt-3">
+          <button class="btn btn-danger btn-lg rounded-pill fw-bold" onclick="openCheckoutModal()">
+            <i class="bi bi-credit-card me-2"></i> Proceed to Checkout
+          </button>
+          <button class="btn btn-outline-success rounded-pill fw-bold" onclick="checkoutViaWhatsApp()">
+            <i class="bi bi-whatsapp me-2"></i> Order Bag via WhatsApp
+          </button>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- QUICK VIEW MODAL -->
+  <div class="modal fade" id="quickViewModal" tabindex="-1" aria-labelledby="quickViewModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-lg modal-dialog-centered">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-white" id="quickViewModalLabel">Sneaker Quick View</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <div class="row g-4 align-items-center">
+            <!-- Image Showcase -->
+            <div class="col-md-6 text-center">
+              <div class="p-4 bg-dark bg-opacity-50 rounded-4 border border-secondary border-opacity-25 mb-3">
+                <img src="" id="qv-main-img" alt="Shoe Preview" class="img-fluid"
+                  style="max-height: 260px; object-fit: contain;">
+              </div>
+              <div class="d-flex justify-content-center gap-2" id="qv-thumbnails">
+                <!-- Thumbnails -->
+              </div>
+            </div>
+
+            <!-- Details -->
+            <div class="col-md-6">
+              <div class="text-danger small fw-bold text-uppercase mb-1" id="qv-shoe-brand">BRAND</div>
+              <h3 class="h4 fw-bold text-white mb-2" id="qv-shoe-title">Title</h3>
+              <div class="text-warning small mb-3" id="qv-shoe-rating">5.0 / 5.0</div>
+
+              <div class="d-flex align-items-baseline gap-3 mb-3">
+                <span class="h3 fw-bold text-gradient mb-0" id="qv-shoe-price">0 RWF</span>
+                <span class="text-dim text-decoration-line-through" id="qv-shoe-orig-price">0 RWF</span>
+              </div>
+
+              <p class="text-muted small mb-3" id="qv-shoe-desc">Description</p>
+
+              <!-- Size Picker -->
+              <label class="form-label text-white small fw-bold mb-2">Select Your EU Size:</label>
+              <div class="d-flex flex-wrap gap-2 mb-3" id="qv-sizes-container">
+                <!-- Sizes -->
+              </div>
+
+              <!-- Quantity Selector -->
+              <div class="d-flex align-items-center gap-3 mb-4">
+                <label class="small text-muted fw-bold">Quantity:</label>
+                <input type="number" id="qv-qty-input"
+                  class="form-control form-control-sm bg-dark text-white border-secondary" style="width: 70px;"
+                  value="1" min="1" max="10">
+              </div>
+
+              <!-- Features -->
+              <ul class="list-unstyled small text-muted mb-4" id="qv-features-list">
+                <!-- Features -->
+              </ul>
+
+              <!-- Action Buttons -->
+              <div class="d-grid gap-2">
+                <button class="btn btn-danger rounded-pill fw-bold py-2" onclick="addToCartFromQuickView()">
+                  <i class="bi bi-bag-plus me-2"></i> Add to Bag
+                </button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- CHECKOUT MODAL -->
+  <div class="modal fade" id="checkoutModal" tabindex="-1" aria-labelledby="checkoutModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-white" id="checkoutModalLabel">Express Kigali Checkout</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <form id="checkout-form" onsubmit="processCheckoutOrder(event)">
+            <h6 class="text-white fw-bold mb-3">1. Delivery Information</h6>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Full Name *</label>
+              <input type="text" class="form-control bg-dark text-white border-secondary" id="customer-name"
+                placeholder="e.g. Jean Damascene" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Phone / WhatsApp Number (Rwanda +250) *</label>
+              <input type="tel" class="form-control bg-dark text-white border-secondary" id="customer-phone"
+                placeholder="0790 329 458" required>
+            </div>
+            <div class="mb-3">
+              <label class="form-label small text-muted">Kigali District / Location *</label>
+              <select class="form-select bg-dark text-white border-secondary mb-2" id="customer-district" required>
+                <option value="Nyarugenge">Nyarugenge (Downtown / Nyamirambo / Kiyovu)</option>
+                <option value="Gasabo">Gasabo (Kimironko / Kacyiru / Remera / Gisozi)</option>
+                <option value="Kicukiro">Kicukiro (Gikondo / Kanombe / Kagarama)</option>
+                <option value="Upcountry">Upcountry Rwanda (Musanze, Huye, Rubavu)</option>
+              </select>
+              <input type="text" class="form-control bg-dark text-white border-secondary" id="customer-address"
+                placeholder="House/Street/Building landmark..." required>
+            </div>
+
+            <h6 class="text-white fw-bold mt-4 mb-3">2. Payment Method</h6>
+            <div class="row g-2 mb-4">
+              <div class="col-6">
+                <label class="payment-method-card d-block active">
+                  <input type="radio" name="paymentMethod" value="MTN MoMo" checked class="form-check-input me-2">
+                  <strong class="text-warning">MTN MoMo</strong>
+                  <div class="text-dim small">*182# Prompt</div>
+                </label>
+              </div>
+              <div class="col-6">
+                <label class="payment-method-card d-block">
+                  <input type="radio" name="paymentMethod" value="Airtel Money" class="form-check-input me-2">
+                  <strong class="text-danger">Airtel Money</strong>
+                  <div class="text-dim small">Instant Dial</div>
+                </label>
+              </div>
+              <div class="col-6">
+                <label class="payment-method-card d-block">
+                  <input type="radio" name="paymentMethod" value="Cash on Delivery" class="form-check-input me-2">
+                  <strong class="text-success">Pay on Delivery</strong>
+                  <div class="text-dim small">Kigali Only</div>
+                </label>
+              </div>
+              <div class="col-6">
+                <label class="payment-method-card d-block">
+                  <input type="radio" name="paymentMethod" value="Visa/Mastercard" class="form-check-input me-2">
+                  <strong class="text-info">Card</strong>
+                  <div class="text-dim small">Visa / Master</div>
+                </label>
+              </div>
+            </div>
+
+            <!-- Order Summary Inside Checkout -->
+            <div class="p-3 bg-dark rounded-3 border border-secondary mb-4">
+              <div id="checkout-items-summary" class="mb-2"></div>
+              <div class="d-flex justify-content-between fw-bold text-white border-top border-secondary pt-2">
+                <span>Total Due:</span>
+                <span class="text-gradient" id="checkout-total-val">0 RWF</span>
+              </div>
+            </div>
+
+            <button type="submit" id="checkout-submit-btn" class="btn btn-danger btn-lg w-100 rounded-pill fw-bold">
+              <i class="bi bi-lock-fill me-2"></i> Complete Order
+            </button>
+          </form>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- ORDER SUCCESS CONFIRMATION MODAL -->
+  <div class="modal fade" id="orderSuccessModal" tabindex="-1" aria-labelledby="orderSuccessModalLabel"
+    aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel text-center p-4">
+        <div class="modal-body">
+          <div class="rounded-circle bg-success bg-opacity-25 d-inline-flex p-3 text-success mb-3">
+            <i class="bi bi-check-circle-fill display-4"></i>
+          </div>
+          <h3 class="fw-bold text-white mb-2">Order Confirmed!</h3>
+          <p class="text-muted small">Murakoze cyane! Your sneaker order has been submitted to the KGL Sneaker Gallery
+            team in Kigali.</p>
+
+          <div class="p-3 bg-dark rounded-3 border border-secondary text-start mb-4">
+            <div class="d-flex justify-content-between small text-muted mb-1">
+              <span>Order Reference:</span>
+              <strong class="text-white" id="success-order-id">KGL-123456</strong>
+            </div>
+            <div class="d-flex justify-content-between small text-muted mb-1">
+              <span>Customer:</span>
+              <span class="text-white" id="success-customer-name">Jean</span>
+            </div>
+            <div class="d-flex justify-content-between small text-muted mb-1">
+              <span>Contact:</span>
+              <span class="text-white" id="success-customer-phone">0790 329 458</span>
+            </div>
+            <div class="d-flex justify-content-between small text-muted">
+              <span>Payment:</span>
+              <span class="text-success fw-bold" id="success-payment-method">MTN MOMO</span>
+            </div>
+          </div>
+
+          <div class="d-grid gap-2">
+            <a href="https://wa.me/250790329458?text=Hello%20KGL%20Sneaker%20Gallery!%20I%20just%20placed%20my%20order%20on%20the%20website.%20Please%20verify%20delivery."
+              target="_blank" class="btn btn-success rounded-pill fw-bold">
+              <i class="bi bi-whatsapp me-2"></i> Message Us On WhatsApp For Fast Dispatch
+            </a>
+            <button type="button" class="btn btn-outline-light rounded-pill" data-bs-dismiss="modal">Back to
+              Shopping</button>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- WISHLIST MODAL -->
+  <div class="modal fade" id="wishlistModal" tabindex="-1" aria-labelledby="wishlistModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-white"><i class="bi bi-heart-fill text-danger me-2"></i> Your Saved
+            Favorites</h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4" id="wishlist-items-container">
+          <!-- Rendered by app.js -->
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SNEAKER SIZE GUIDE MODAL -->
+  <div class="modal fade" id="sizeGuideModal" tabindex="-1" aria-labelledby="sizeGuideModalLabel" aria-hidden="true">
+    <div class="modal-dialog modal-dialog-centered">
+      <div class="modal-content glass-panel">
+        <div class="modal-header">
+          <h5 class="modal-title fw-bold text-white"><i class="bi bi-rulers text-danger me-2"></i> Sneaker Sizing Guide
+          </h5>
+          <button type="button" class="btn-close btn-close-white" data-bs-dismiss="modal" aria-label="Close"></button>
+        </div>
+        <div class="modal-body p-4">
+          <p class="text-muted small mb-3">Compare your standard European (EU), US, UK and foot length in centimeters
+            (CM):</p>
+          <div class="table-responsive">
+            <table class="table table-dark table-striped table-bordered text-center small mb-0">
+              <thead>
+                <tr class="table-danger text-dark fw-bold">
+                  <th>EU</th>
+                  <th>US Men</th>
+                  <th>US Women</th>
+                  <th>UK</th>
+                  <th>CM</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr>
+                  <td><strong>36</strong></td>
+                  <td>4.0</td>
+                  <td>5.5</td>
+                  <td>3.5</td>
+                  <td>22.5</td>
+                </tr>
+                <tr>
+                  <td><strong>37</strong></td>
+                  <td>5.0</td>
+                  <td>6.5</td>
+                  <td>4.5</td>
+                  <td>23.5</td>
+                </tr>
+                <tr>
+                  <td><strong>38</strong></td>
+                  <td>5.5</td>
+                  <td>7.0</td>
+                  <td>5.0</td>
+                  <td>24.0</td>
+                </tr>
+                <tr>
+                  <td><strong>39</strong></td>
+                  <td>6.5</td>
+                  <td>8.0</td>
+                  <td>6.0</td>
+                  <td>24.5</td>
+                </tr>
+                <tr>
+                  <td><strong>40</strong></td>
+                  <td>7.0</td>
+                  <td>8.5</td>
+                  <td>6.5</td>
+                  <td>25.0</td>
+                </tr>
+                <tr>
+                  <td><strong>41</strong></td>
+                  <td>8.0</td>
+                  <td>9.5</td>
+                  <td>7.5</td>
+                  <td>26.0</td>
+                </tr>
+                <tr>
+                  <td><strong>42</strong></td>
+                  <td>8.5</td>
+                  <td>10.0</td>
+                  <td>8.0</td>
+                  <td>26.5</td>
+                </tr>
+                <tr>
+                  <td><strong>43</strong></td>
+                  <td>9.5</td>
+                  <td>11.0</td>
+                  <td>9.0</td>
+                  <td>27.5</td>
+                </tr>
+                <tr>
+                  <td><strong>44</strong></td>
+                  <td>10.0</td>
+                  <td>11.5</td>
+                  <td>9.5</td>
+                  <td>28.0</td>
+                </tr>
+                <tr>
+                  <td><strong>45</strong></td>
+                  <td>11.0</td>
+                  <td>12.5</td>
+                  <td>10.5</td>
+                  <td>29.0</td>
+                </tr>
+                <tr>
+                  <td><strong>46</strong></td>
+                  <td>12.0</td>
+                  <td>13.5</td>
+                  <td>11.5</td>
+                  <td>30.0</td>
+                </tr>
+              </tbody>
+            </table>
+          </div>
+          <div class="alert alert-dark border-secondary small mt-3 mb-0 text-muted">
+            <i class="bi bi-info-circle text-info me-1"></i> If you're not sure about your size, our Kigali delivery
+            rider can bring two adjacent sizes for you to try on!
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+
+  <!-- Toast Notification Container -->
+  <div class="toast-container" id="toast-container"></div>
+
+  <!-- Bootstrap 5.3.3 JS Bundle -->
+  <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"
+    integrity="sha384-YvpcrYf0tY3lHB60NNkmXc5s9fDVZLESaAA55NDzOxhy9GkcIdslK1eN7N6jIeHz"
+    crossorigin="anonymous"></script>
+
+  <!-- Products Database -->
+  <script src="js/products.js"></script>
+
+  <!-- Application Engine -->
+  <script src="js/app.js"></script>
+</body>
+
+</html>
